@@ -33,7 +33,7 @@ router.post("/webhook", (req, res) => {
 
     let bot = config.BOTS[req.body.bot];
 
-    let message = `\`[${renderDate()}]\` The user \`${req.body.user}\` has voted for the bot **${bot}**${(req.body.query != undefined) ? ` (Request Query: \`${req.body.query}\`)` : ""}. ${(req.body.isWeekend == true) ? `**This vote count as double since the weekend boost is applied.**` : ""}`;
+    let message = `\`[${renderDate()}]\` The user \`${req.body.user}\` has voted for the bot **${bot}**${(req.body.query != "") ? ` (Request Query: \`${req.body.query}\`)` : ""}. ${(req.body.isWeekend == true) ? `**This vote count as double since the weekend boost is applied.**` : ""}`;
     postWebHook(config.DISCORD_WEBHOOK, message)
         .catch(error => { throw error; });
     res.status(200).json({ message: "All clear !"});
