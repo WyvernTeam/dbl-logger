@@ -4,3 +4,6 @@ package-lock.json
 
 # Config files
 config.js
+
+# Test file
+test.js
