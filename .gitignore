@@ -1,0 +1,6 @@
+# NodeJS ignores
+package-lock.json
+/node_modules
+
+# Config files
+config.js
