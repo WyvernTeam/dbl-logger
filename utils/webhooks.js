@@ -38,13 +38,13 @@ function postWebHook(link, message) {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ content: message })
-        }
+        };
         fetch(link, data)
             .then(response => {
                 if (response.status == 400) reject("JSON_ERROR");
                 resolve(true);
             });
-    })
+    });
 }
 
 module.exports = { checkWebHook, postWebHook };

@@ -29,4 +29,4 @@ function getUserData(id) {
     });
 }
 
-module.exports = { getUserData }
+module.exports = { getUserData };
