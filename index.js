@@ -16,7 +16,7 @@ console.log(`Starting "\x1b[33m${process.name}\x1b[0m" app.\n\x1b[32mVersion:\x1
 
 /**
  * @function configCheck
- * @returns null
+ * @returns {null}
  * 
  * This function will check the config.js to avoid process errors
  */

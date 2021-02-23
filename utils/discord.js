@@ -1,8 +1,20 @@
+/**
+ * Imported constants & modules
+ */
 const { json } = require("body-parser");
 const fetch = require("node-fetch");
 const { APP_TOKEN } = require("../config.js");
 
+/**
+ * @function getUserData
+ * @param {int} id The ID of the user to get the data from 
+ * @returns {Promise} The user object attached to a promise
+ * This function will get a user object from a Discord ID
+ */
 function getUserData(id) {
+    /**
+     * Return a promise to work asynchronously
+     */
     return new Promise((resolve, reject) => {
         const data = {
             method: "GET",
