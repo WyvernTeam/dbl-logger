@@ -1,7 +1,6 @@
 /**
  * Imported constants & modules
  */
-const { json } = require("body-parser");
 const fetch = require("node-fetch");
 const { APP_TOKEN } = require("../config.js");
 
