@@ -1,7 +1,7 @@
 {
   "name": "dbl-logger",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Top.gg | dbl logging webhook to keep track of votes on multiple bots.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -13,5 +13,6 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "repository": { "url": "https://github.com/WyvernTeam/dbl-logger" }
 }
