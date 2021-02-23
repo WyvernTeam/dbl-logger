@@ -1,5 +1,15 @@
+/**
+ * Imported constants & modules
+ */
 const fetch = require("node-fetch");
 
+/**
+ * @function checkWebHook
+ * @param {string} link Literal link to a Discord webhook
+ * @returns {Promise<Boolean>} 
+ * This function checks the provided 
+ * webhook to see if it is valid or not.
+ */
 function checkWebHook(link) {
     return new Promise((resolve, reject) => {
 
@@ -15,6 +25,13 @@ function checkWebHook(link) {
     });
 }
 
+/**
+ * @function postWebHook
+ * @param {string} link Literal link to a Discord webhook
+ * @param {string} message The message to post
+ * @returns {Promise<Boolean>}
+ * This function posts a message through a Discord WebHook
+ */
 function postWebHook(link, message) {
     return new Promise((resolve, reject) => {
         const data = {
