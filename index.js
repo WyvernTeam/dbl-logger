@@ -33,10 +33,7 @@ router.post("/webhook", (req, res) => {
     if (req.body.isWeekend == "false") req.body.isWeekend = false;
 
     let bot = config.BOTS[req.body.bot];
-    let user;
-    getUserData(req.body.user)
-        .then(result => { user = result})
-        .catch(error => { throw error; });
+    let user = await getUserData(req.body.user).catch(error => { throw error; });
 
     let message = `\`[${renderDate()}]\` The user ${user.username}#${user.discriminator} \`(${req.body.user})\` has voted for the bot **${bot}**${(req.body.query != "") ? ` (Request Query: \`${req.body.query}\`)` : ""}. ${(req.body.isWeekend == true) ? `**This vote count as double since the weekend boost is applied.**` : ""}`;
     postWebHook(config.DISCORD_WEBHOOK, message)
