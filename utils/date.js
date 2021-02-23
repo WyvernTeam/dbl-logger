@@ -1,3 +1,9 @@
+/**
+ * @function renderDate
+ * @param {Date} d The date object to format
+ * @returns {string}
+ * Formats a Date object to a DD-MM-YYYY hh:mm:ss string 
+ */
 function renderDate(d = new Date()) {
     const years = `${d.getFullYear().toString()}`;
     const month = `${(d.getMonth() + 1).toString().length === 2 ? (d.getMonth() + 1).toString() : `0${(d.getMonth() + 1).toString()}`}`;
