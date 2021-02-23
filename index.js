@@ -23,7 +23,7 @@ let router = express.Router();
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-router.post("/webhook", (req, res) => {
+router.post("/webhook", async (req, res) => {
     if (req.headers.authorization != config.AUTH) return res.status(403).json({ message: "403 Forbidden" });
     if (req.body.bot == undefined || config.BOTS[req.body.bot] == undefined) return res.status(400).json({ message: "400 Bad Request" });
     if (req.body.user == undefined) return res.status(400).json({ message: "400 Bad Request" });
