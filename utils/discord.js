@@ -11,7 +11,7 @@ function getUserData(id) {
         fetch(`https://discord.com/api/users/${id}`, data)
             .then(response => response.json())
             .then(json => {
-                if (json.message != undefined) reject(json.message());
+                if (json.message != undefined) reject(json.message);
                 resolve(json);
             })
             .catch(error => reject(error));
